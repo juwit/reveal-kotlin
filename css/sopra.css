@@ -1,0 +1,18 @@
+body{
+    background:url("../images/sopra_background.png");
+    background-repeat: repeat-x;
+    background-position: top;
+}
+
+.sopra_aside_logo{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    z-index: 30;
+    right: 120px;
+    bottom: 10px;
+    -webkit-user-select: none;
+    background-image: url("../images/logo_small.png");
+    background-size:100%;
+    background-repeat: no-repeat;
+}

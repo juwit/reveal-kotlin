@@ -71,25 +71,102 @@
                         <img src="images/leonidas.png"/>
                     </section>
 					<section>
-                        <h2>Named arguments</h2>
-                    </section>
+						<h2>Language basics</h2>
+						<p>Defining packages</p>
+						<pre><code>package my.demo
+
+import java.util.*
+
+// ...</code></pre>
+					</section>
+					<section>
+						<h2>Language basics</h2>
+						<p>Defining functions</p>
+						<p>Function having two <i>Int</i> parameters with <i>Int</i> return type:</p>
+						<pre><code>fun sum(a: Int, b: Int): Int {
+  return a + b
+}</code></pre>
+						<p>Function with an <i>expression body</i> and <i>inferred</i> return type:</p>
+						<pre><code>fun sum(a: Int, b: Int) = a + b</code></pre>
+					</section>
+					<section>
+						<h2>Language basics</h2>
+						<p>Defining functions</p>
+						<p>Function returning no meaningful value:</p>
+						<pre><code>fun printSum(a: Int, b: Int): Unit {
+  print(a + b)
+}</code></pre>
+						<p><i>Unit</i> return type can be omitted:</p>
+						<pre><code>fun printSum(a: Int, b: Int) {
+  print(a + b)
+}</code></pre>
+					</section>
+					<section>
+						<h2>Language basics</h2>
+						<p>Expressions</p>
+						<p>This statement : </p>
+						<pre><code>fun max(a: Int, b: Int): Int {
+  if (a > b)
+    return a
+  else
+    return b
+}</code></pre>
+						<p>can be re-writen in a one-liner, using <i>if</i> as an expression</p>
+						<pre><code>fun max(a: Int, b: Int) = if (a > b) a else b</code></pre>
+					</section>
+					<section>
+						<h2>Language basics</h2>
+						<p>Defining variables</p>
+						<p>Assign-once (read-only) local variable:</p>
+						<pre><code>val a: Int = 1
+val b = 1   // `Int` type is inferred
+val c: Int  // Type required when no initializer is provided
+c = 1       // definite assignment</code></pre>
+						<p>Mutable variable:</p>
+						<pre><code>var x = 5 // `Int` type is inferred
+x += 1</code></pre>
+					</section>
                     <section>
-                        <h2>String templates</h2>
+						<h2>Language basics</h2>
+                        <p>String templates</p>
+						<pre><code>fun example1(a: Any, b: Any) =
+  "This is some text in which variables ($a, $b) appear."</code></pre>
+                    </section>
+
+
+					<section>
+						<h2>WHat does it look like?</h2>
+						<p>A POJO with getters, setters, equals(), hashCode(), toString() and copy() in a single line:</p>
+						<pre><code>data class Customer(val name: String, val email: String, val company: String)</code></pre>
+					</section>
+					<section>
+                        <h2>Named arguments</h2>
+						<pre><code>fun bar(i: Int, s: String = "", b: Boolean = true) {}
+
+fun usage() {
+    // named arguments:
+    bar(1, b = false)
+}</code></pre>
                     </section>
                     <section>
                         <h2>Multiline strings</h2>
+						<pre><code></code></pre>
                     </section>
                     <section>
                         <h2>Null Checks</h2>
+						<pre><code></code></pre>
                     </section>
                     <section>
                         <h2>Type extension</h2>
+						<pre><code></code></pre>
                     </section>
                     <section>
                         <h2>Lambdas</h2>
+						<pre><code></code></pre>
                     </section>
                     <section>
                         <h2>Collections</h2>
+						<pre><code></code></pre>
                     </section>
                 </section>
 

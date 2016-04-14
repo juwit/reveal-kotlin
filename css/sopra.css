@@ -16,3 +16,7 @@ body{
     background-size:100%;
     background-repeat: no-repeat;
 }
+
+.reveal pre{
+    width: 100%;
+}

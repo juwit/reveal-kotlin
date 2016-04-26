@@ -148,14 +148,31 @@ fun usage() {
     bar(1, b = false)
 }</code></pre>
                     </section>
+					<section>
+						<h2>The billion dollar mistake</h2>
+						<h3>null</h3>
+					</section>
                     <section>
-                        <h2>Multiline strings</h2>
-						<pre><code></code></pre>
+						<h2>null</h2>
+                        <p>A regular variable cannot hold a null reference</p>
+						<pre><code>var a: String = "abc"
+a = null // compilation error
+val l = a.length // ok: variable 'a' will never be null</code></pre>
+						<p>To allow nulls, we can declare a variable as nullable using <i>?</i></p>
+						<pre><code>var b: String? = "abc"
+a = null // ok
+val l = b.length // error: variable 'b' can be null</code></pre>
                     </section>
-                    <section>
-                        <h2>Null Checks</h2>
-						<pre><code></code></pre>
-                    </section>
+					<section>
+						<h2>null</h2>
+						<p>Checking for null in conditions</p>
+						<pre><code>val l = if (b != null) b.length else -1</code></pre>
+						<p>Safe Calls '?'</p>
+						<pre><code>val l = b?.length // returns b.length if b is not null, and null otherwise</code></pre>
+						<p>Elvis operator '?:'</p>
+						<pre><code>val l = b?.length ?: -1</code></pre>
+						<p>If the expression to the left of ?: is not null, the elvis operator returns it, otherwise it returns the expression to the right</p>
+					</section>
                     <section>
                         <h2>Type extension</h2>
 						<pre><code></code></pre>

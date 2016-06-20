@@ -45,6 +45,7 @@
 			<div class="slides">
 				<section>
 					<h2>Kotlin revealed</h2>
+					<aside>Why Kotlin is my next programming language</aside>
 					<p>
 						<a href="http://github.com/Juwit">Julien WITTOUCK</a>
 					</p>
@@ -55,14 +56,79 @@
 					<h3>About Me</h3>
 					<p>Software Architect at Sopra Steria (XNet)</p>
 					<img src="images/bebe_juwit.jpg" />
+					<img src="images/xnet.png" />
 				</section>
 
 				<section>
 					<h2>Au menu</h2>
 					<ul>
 						<li>What is Kotlin?</li>
-						<li>Kotlin main features</li>
+						<li>Kotlin main language features</li>
+                        <li>Why Kotlin is my next programming language?</li>
 					</ul>
+				</section>
+
+				<section class="stack">
+					<section>
+						<h2>What is Kotlin?</h2>
+                        <img src="images/kotlin_logo.png"/>
+					</section>
+                    <section>
+                        <h2>Kotlin is..</h2>
+                        <p>A programming language</p>
+                        <p>Object Oriented</p>
+                        <p>Functionnal</p>
+                        <img src="images/morpheus.png"/>
+                    </section>
+                    <section>
+                        <h2>Kotlin is...</h2>
+                        <p>Designed for the JVM and Android</p>
+                        <p>Works everywhere where Java works</p>
+                        <ul>
+                            <li>Server side applications</li>
+                            <li>Android applications</li>
+                            <li>Desktop applications</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Kotlin...</h2>
+                        <p>Works with all major Java tools/frameworks</p>
+                        <ul>
+                            <li>IntelliJ IDEA, Android Studio, Eclipse</li>
+                            <li>Maven, Gradle, Ant</li>
+                            <li>Spring/Hibernate...</li>
+                            <li>Github, Slack, and even Minecraft <img src="images/minecraft.png" class="img-inline"/> </li>
+                        </ul>
+                        <img src="images/gatsby.png"/>
+                    </section>
+                    <section>
+                        <h2>Kotlin is...</h2>
+                        <p>Interoperable with Java</p>
+                        <ul>
+                            <li>Mixed Java+Kotlin projects</li>
+                            <li>Usage of Java libraries in Kotlin</li>
+                            <li>Usage of Kotlin libraries in Java</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Kotlin is...</h2>
+                        <p>Production-ready</p>
+                        <ul>
+                            <li>Version 1.0 released on feb. 2016</li>
+                            <li>500k lines of code in Jetbrains projects</li>
+                            <li>2M lines of code in Github</li>
+                        </ul>
+                        <img src="images/kotlin_loc.png"/>
+                    </section>
+                    <section>
+                        <h2>Companies using Kotlin</h2>
+                        <ul>
+                            <li>Jetbrains : IntelliJ IDEA plugins, YouTrack vNext, CRM apps, new products etc.</li>
+                            <li>Prezi.com : Kotlin in backend, data processing and service development</li>
+                            <li>NBC News Digital : NBC News, TODAY and Nightly News Android apps using Kotlin</li>
+
+                        </ul>
+                    </section>
 				</section>
 				
                 <section class="stack">
@@ -138,9 +204,10 @@ x += 1</code></pre>
 						<h2>WHat does it look like?</h2>
 						<p>A POJO with getters, setters, equals(), hashCode(), toString() and copy() in a single line:</p>
 						<pre><code>data class Customer(val name: String, val email: String, val company: String)</code></pre>
+                        <img src="images/gatsby.png"/>
 					</section>
 					<section>
-                        <h2>Named arguments</h2>
+                        <h2>Named & default arguments</h2>
 						<pre><code>fun bar(i: Int, s: String = "", b: Boolean = true) {}
 
 fun usage() {
@@ -149,8 +216,11 @@ fun usage() {
 }</code></pre>
                     </section>
 					<section>
-						<h2>The billion dollar mistake</h2>
-						<h3>null</h3>
+						<h2>The billion dollar mistake (1965)</h2>
+                        <blockquote style="width:90%">All use of references should be absolutely safe, with checking performed automatically by the compiler.
+                            But I couldn't resist the temptation to put in a null reference, simply because it was so easy to implement.
+                            This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years.</blockquote>
+                        <aside>Sir Charles Antony Richard Hoare  <img src="images/Sir_Tony_Hoare.jpg" class="img-inline-big"/></aside>
 					</section>
                     <section>
 						<h2>null</h2>
@@ -169,21 +239,90 @@ val l = b.length // error: variable 'b' can be null</code></pre>
 						<pre><code>val l = if (b != null) b.length else -1</code></pre>
 						<p>Safe Calls '?'</p>
 						<pre><code>val l = b?.length // returns b.length if b is not null, and null otherwise</code></pre>
-						<p>Elvis operator '?:'</p>
+						<p>Elvis operator ?: <img src="images/elvis_operator.jpg" class="img-inline-big"/></p>
 						<pre><code>val l = b?.length ?: -1</code></pre>
 						<p>If the expression to the left of ?: is not null, the elvis operator returns it, otherwise it returns the expression to the right</p>
 					</section>
                     <section>
-                        <h2>Type extension</h2>
-						<pre><code></code></pre>
-                    </section>
-                    <section>
-                        <h2>Lambdas</h2>
-						<pre><code></code></pre>
+                        <h2>Extension functions</h2>
+                        <p>Extend a class without having to inherit from the class or use a Decorator pattern</p>
+                        <aside>Java : </aside>
+                        <pre><code>Collections.sort( myList, myComparator );</code></pre>
+                        <aside>Kotlin : </aside>
+                        <pre><code>fun List.sort( myComparator ) {
+    Collections.sort(this, myComparator )
+}
+
+myList.sort(myComparator)
+                        </code></pre>
+						<pre><code>fun String.toCamelCase() { ... }
+
+"Convert this to camelcase".toCamelCase()</code></pre>
                     </section>
                     <section>
                         <h2>Collections</h2>
-						<pre><code></code></pre>
+                        <p>Immutable & Mutable collections</p>
+                        <ul>
+                            <li>List&lt;T&gt; / MutableList&lt;T&gt;</li>
+                            <li>Set&lt;T&gt; / MutableSet&lt;T&gt;</li>
+                            <li>Map&lt;T&gt; / MutableMap&lt;T&gt;</li>
+                        </ul>
+						<pre><code>val numbers: MutableList&lt;Int&gt; = mutableListOf(1, 2, 3)
+val readOnlyView: List&lt;Int&gt; = numbers
+println(numbers)      // prints "[1, 2, 3]"
+numbers.add(4)
+println(readOnlyView) // prints "[1, 2, 3, 4]"
+readOnlyView.clear()  // -> does not compile
+                      // 'clear' is not in the Immutable interface
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Collection extensions</h2>
+                        <pre><code>val items = listOf(1, 2, 3, 4)
+items.first() == 1
+items.last() == 4
+items.filter { it % 2 == 0 }   // returns [2, 4]
+// have you seen the Lambda ?
+
+val rwList = mutableListOf(1, 2, 3)
+rwList.requireNoNulls()        // returns [1, 2, 3]
+if (rwList.none { it > 6 }) println("No items above 6")
+// prints "No items above 6"
+val item = rwList.firstOrNull()</code></pre>
+                    </section>
+                    <section>
+                        <h2>Higher-Order Functions and Lambdas</h2>
+                        <p>Functions that takes functions as a parameter</p>
+                        <pre><code>fun &lt;T, R&gt; List&lt;T&gt;.map(transform: (T) -&gt; R): List&lt;R&gt; {
+  val result = arrayListOf&lt;R&gt;()
+  for (item in this)
+    result.add(transform(item))
+  return result
+}
+val doubled = ints.map { it -> it * 2 } // or : ints.map { it * 2 }
+
+strings.filter { it.length == 5 }.map { it.toUpperCase() }
+</code></pre>
+                        <img src="images/morpheus.png" style="width:30%"/>
+                    </section>
+                </section>
+
+                <section class="stacked">
+                    <section>
+                        <h3>Why Kotlin is my next programming language?</h3>
+                        <h4>Concise</h4>
+                        <p>Less boilerplate code (POJOs)</p>
+                    </section>
+                    <section>
+                        <h3>Why Kotlin is my next programming language?</h3>
+                        <h4>Safe</h4>
+                        <p>Say bye-bye to NullPointerExceptions</p>
+                        <img src="images/gatsby.png"/>
+                    </section>
+                    <section>
+                        <h3>Why Kotlin is my next programming language?</h3>
+                        <h4>Interoperable</h4>
+                        <p>Works with my favorites frameworks</p>
                     </section>
                 </section>
 

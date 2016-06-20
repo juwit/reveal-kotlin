@@ -16,3 +16,19 @@ body{
     background-size:100%;
     background-repeat: no-repeat;
 }
+
+.reveal pre{
+    width: 100%;
+}
+
+.reveal img.img-inline{
+    width: 32px;
+    height: 32px;
+    vertical-align: bottom;
+}
+
+.reveal img.img-inline-big{
+    width: 128px;
+    height: 128px;
+    vertical-align: bottom;
+}
